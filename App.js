@@ -7,11 +7,8 @@ import MainScreen from './screens/MainScreen'
 
 const RootStack = createStackNavigator(
   {
-    Home: MainScreen,
+    Main: MainScreen
   },
-  {
-    initialRouteName: 'Home',
-  }
 );
 const AppContainer=createAppContainer(RootStack);
 export default class App extends Component {
