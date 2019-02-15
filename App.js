@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux'
 import store from './store'
-import { StackNavigator  } from "react-navigation";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 import MainScreen from './screens/MainScreen'
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
+
+const RootStack = createStackNavigator(
+  {
+    Home: MainScreen,
+  },
+  {
+    initialRouteName: 'Home',
   }
+);
+const AppContainer=createAppContainer(RootStack);
+export default class App extends Component {
   render() {
-    const MainNavigator = StackNavigator ({
-      Main: { screen: MainScreen }
-    })
     return (
       <Provider store={store}>
-        <MainNavigator />
+        <AppContainer />
       </Provider>
     );
   }
