@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux'
 import store from './store'
-import { createStackNavigator } from "react-navigation";
+import { StackNavigator  } from "react-navigation";
 import MainScreen from './screens/MainScreen'
 
 export default class App extends Component {
@@ -9,7 +9,7 @@ export default class App extends Component {
     super(props);
   }
   render() {
-    const MainNavigator = createStackNavigator({
+    const MainNavigator = StackNavigator ({
       Main: { screen: MainScreen }
     })
     return (
