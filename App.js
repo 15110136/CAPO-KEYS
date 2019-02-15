@@ -1,12 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Provider } from 'react-redux'
 import store from './store'
-import { StackNavigator } from "react-navigation";
+import { createStackNavigator } from "react-navigation";
 import MainScreen from './screens/MainScreen'
 
-export default class App extends React.Component {
+export default class App extends React {
   render() {
-    const MainNavigator=StackNavigator({
+    const MainNavigator=createStackNavigator({
       Main:{screen:MainScreen}
     })
     return (
@@ -16,12 +16,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
